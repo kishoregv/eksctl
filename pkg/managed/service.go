@@ -211,7 +211,7 @@ func (m *Service) UpgradeNodeGroup(options UpgradeOptions) error {
 
 	if options.LaunchTemplateVersion != "" {
 		// TODO validate launch template version
-		if len(ltResources) == 1 {
+		if len(ltResources) == 0 {
 			return errors.New("launch-template-version is only valid if a nodegroup is using an explicit launch template")
 		}
 		if ngResource.LaunchTemplate == nil || ngResource.LaunchTemplate.Id == nil {
